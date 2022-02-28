@@ -1,0 +1,16 @@
+version: '3'
+services:
+  node-app:
+    build: .
+    ports:
+      - 8001:8001
+  mongo:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=Kanha
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+    volumes:
+      - mongo_db:/data/db
+
+volumes:
+  mongo_db:
